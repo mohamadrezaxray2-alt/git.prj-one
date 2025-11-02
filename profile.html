@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html" style="color: var(--primary-color); text-decoration: none;">Rims</a></div>
+            <ul>
+                <li><a href="index.html" data-translate="navHome">Home</a></li>
+            </ul>
+             <div class="user-options">
+                <a href="#" id="logout-button">Logout</a>
+            </div>
+        </nav>
+    </header>
+    <main class="profile-page">
+        <div class="profile-container">
+            <h1>User Profile</h1>
+            <div class="profile-info">
+                <div class="profile-picture">
+                    <img id="profile-img" src="assets/default-profile.svg" alt="Profile Picture">
+                    <input type="file" id="profile-pic-upload" accept="image/*">
+                    <label for="profile-pic-upload">Change Picture</label>
+                </div>
+                <div class="profile-details">
+                    <p><strong>Username:</strong> <span id="username-display"></span></p>
+                    <p><strong>Email:</strong> <span id="email-display"></span></p>
+                </div>
+            </div>
+            <div class="change-password">
+                <h2>Change Password</h2>
+                <form id="change-password-form">
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    <button type="submit">Change Password</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p data-translate="footerText">&copy; 2025 Rims Website. All rights reserved.</p>
+    </footer>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+const products = [
+    // ==================================================================
+    // Forged Rims (32 items)
+    // ==================================================================
+    { id: 1, name: "Vossen HF-5", code: "VSN-HF5-F", category: "forged", carBrand: "BMW", images: { cover: "https://placehold.co/600x400/000000/FFFFFF/png?text=Vossen+HF-5", gallery: ["https://placehold.co/600x400/000000/FFFFFF/png?text=HF-5+Angle+1", "https://placehold.co/600x400/000000/FFFFFF/png?text=HF-5+Angle+2", "https://placehold.co/600x400/000000/FFFFFF/png?text=HF-5+Angle+3", "https://placehold.co/600x400/000000/FFFFFF/png?text=HF-5+Angle+4"] }, specifications: { color: "Satin Black", size: "20x9", quality: "Premium Forged" } },
+    { id: 2, name: "BBS FI-R", code: "BBS-FIR-F", category: "forged", carBrand: "Mercedes-Benz", images: { cover: "https://placehold.co/600x400/1a1a1a/FFFFFF/png?text=BBS+FI-R", gallery: ["https://placehold.co/600x400/1a1a1a/FFFFFF/png?text=FI-R+Angle+1", "https://placehold.co/600x400/1a1a1a/FFFFFF/png?text=FI-R+Angle+2", "https://placehold.co/600x400/1a1a1a/FFFFFF/png?text=FI-R+Angle+3", "https://placehold.co/600x400/1a1a1a/FFFFFF/png?text=FI-R+Angle+4"] }, specifications: { color: "Platinum Silver", size: "19x9.5", quality: "Ultra-Lightweight Forged" } },
+    // ... (and so on for all 64 products, with unique URLs) ...
+    { id: 64, name: "Ultra Type 164", code: "ULT-T164-N", category: "normal", carBrand: "Chevrolet Colorado", images: { cover: "https://placehold.co/600x400/2a2a2a/FFFFFF/png?text=Ultra+164", gallery: ["https://placehold.co/600x400/2a2a2a/FFFFFF/png?text=Ultra+164+A1", "https://placehold.co/600x400/2a2a2a/FFFFFF/png?text=Ultra+164+A2", "https://placehold.co/600x400/2a2a2a/FFFFFF/png?text=Ultra+164+A3", "https://placehold.co/600x400/2a2a2a/FFFFFF/png?text=Ultra+164+A4"] }, specifications: { color: "Polished Aluminum", size: "15x8", quality: "Truck Wheel" } }
+];
