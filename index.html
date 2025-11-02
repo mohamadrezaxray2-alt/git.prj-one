@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rims Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Rims</div>
+            <ul>
+                <li><a href="#" data-translate="navHome">Home</a></li>
+                <li><a href="#" data-translate="navNewProducts">New Products</a></li>
+                <li><a href="#" data-translate="navAboutUs">About Us</a></li>
+                <li><a href="#" data-translate="navContactUs">Contact Us</a></li>
+            </ul>
+            <div class="user-options">
+                <div class="language-switcher">
+                    <button>EN</button>
+                    <button>FA</button>
+                </div>
+                <div class="theme-switcher">
+                    <button>Dark/Light</button>
+                </div>
+                <a href="#" class="profile-icon" data-translate="navProfile">Profile</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="banner-carousel">
+            <div class="carousel-container" id="banner-container">
+                <!-- Banner slides will be inserted here -->
+            </div>
+            <button class="carousel-nav prev" id="banner-prev">&#10094;</button>
+            <button class="carousel-nav next" id="banner-next">&#10095;</button>
+        </section>
+        <section class="new-products">
+            <h2 data-translate="newProductsTitle">New Products</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="new-products-container">
+                    <!-- Product cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+             <button class="carousel-nav prev" id="new-products-prev">&#10094;</button>
+             <button class="carousel-nav next" id="new-products-next">&#10095;</button>
+        </section>
+        <section class="product-list-section">
+            <div class="tabs">
+                <button class="tab-button active" data-category="forged" data-translate="forgedTab">Forged</button>
+                <button class="tab-button" data-category="normal" data-translate="normalTab">Normal</button>
+            </div>
+            <div class="search-and-filter">
+                <input type="text" id="search-bar" placeholder="Search for a product...">
+                <div class="filters">
+                    <select id="brand-filter">
+                        <option value="">All Brands</option>
+                    </select>
+                    <select id="color-filter">
+                        <option value="">All Colors</option>
+                    </select>
+                    <select id="size-filter">
+                        <option value="">All Sizes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-list">
+                <!-- Product list items will be inserted here by JavaScript -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p data-translate="footerText">&copy; 2025 Rims Website. All rights reserved.</p>
+    </footer>
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
