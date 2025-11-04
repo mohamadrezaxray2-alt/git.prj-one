@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="loader-wrapper">
+        <div class="loader-car"></div>
+        <div class="loader-track"></div>
+    </div>
     <header>
         <nav>
             <div class="logo">Rims</div>
             <ul>
                 <li><a href="#" data-translate="navHome">Home</a></li>
                 <li><a href="#" data-translate="navNewProducts">New Products</a></li>
+                <li><a href="favorites.html" data-translate="navFavorites">Favorites</a></li>
                 <li><a href="#" data-translate="navAboutUs">About Us</a></li>
                 <li><a href="#" data-translate="navContactUs">Contact Us</a></li>
             </ul>
@@ -29,6 +34,7 @@
         </nav>
     </header>
     <main>
+        <div id="porsche-container"></div>
         <section class="banner-carousel">
             <div class="carousel-container" id="banner-container">
                 <!-- Banner slides will be inserted here -->
@@ -77,5 +83,8 @@
     <script src="js/main.js"></script>
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </body>
 </html>

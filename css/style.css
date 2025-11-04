@@ -72,6 +72,69 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+#porsche-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s;
+}
+
+.loader-car {
+    width: 100px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    animation: car-move 1.5s infinite linear;
+}
+
+.loader-car::before, .loader-car::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.loader-car::before {
+    left: 15px;
+}
+
+.loader-car::after {
+    right: 15px;
+}
+
+.loader-track {
+    width: 150px;
+    height: 2px;
+    background-color: #555;
+    position: absolute;
+    bottom: calc(50% - 30px);
+}
+
+@keyframes car-move {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(100px); }
+}
+
 /* Carousel Styles */
 .banner-carousel, .new-products {
     position: relative;
@@ -137,6 +200,12 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .product-item {
+        width: calc(33.333% - 2rem);
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -147,19 +216,44 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
+        padding: 0;
     }
 
     .user-options {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .product-details-layout {
         grid-template-columns: 1fr;
     }
 
+    .product-item {
+        width: calc(50% - 2rem);
+    }
+
+    .search-and-filter {
+        flex-direction: column;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
     .floating-share-buttons {
         bottom: 1rem;
         right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: calc(100% - 2rem);
+    }
+
+    .profile-info {
+        flex-direction: column;
     }
 }
 
@@ -209,13 +303,37 @@ nav ul li a:hover {
     gap: 1rem;
 }
 
-.user-options button, .user-options a {
-    background-color: transparent;
+.language-switcher, .theme-switcher {
+    display: flex;
     border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.language-switcher button, .theme-switcher button {
+    background-color: transparent;
+    border: none;
     color: var(--primary-color);
     padding: 0.5rem 1rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+.language-switcher button:first-child::after, .theme-switcher button:first-child::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -1px;
+    width: 2px;
+    height: 60%;
+    background-color: var(--primary-color);
+    transform: rotate(20deg);
+}
+
+.language-switcher button.active, .theme-switcher button.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .user-options button:hover, .user-options a:hover {
@@ -319,18 +437,37 @@ footer {
 
 .product-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: var(--secondary-color);
     border: 1px solid #333;
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: 15px;
+    padding: 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    width: calc(25% - 2rem);
+    margin: 1rem;
 }
 
 .product-item:hover {
     background-color: #2a2a2a;
     border-color: var(--primary-color);
+}
+
+.like-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.like-btn:hover, .like-btn.liked {
+    color: #ff0057;
 }
 
 .product-item:hover {
@@ -517,14 +654,108 @@ footer {
     padding: 2rem;
 }
 
-.auth-container, .profile-container {
+.auth-wrapper {
+    perspective: 1000px;
+}
+
+.auth-container {
     background-color: var(--secondary-color);
     padding: 2rem 3rem;
-    border-radius: 8px;
+    border-radius: 15px;
     border: 1px solid var(--primary-color);
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.auth-tab-button {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.auth-tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.auth-form-container {
+    display: none;
+}
+
+.auth-form-container.active {
+    display: block;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.auth-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #ffd700b3;
+}
+
+.form-switch-text {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
 }
 
 body.light-mode .auth-container,
@@ -567,20 +798,64 @@ body.light-mode .profile-container {
     transition: background-color 0.3s;
 }
 
-.profile-info {
+.profile-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.change-pic-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.profile-summary h1 {
+    margin: 0;
+}
+
+.profile-section {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 8px;
     margin-bottom: 2rem;
     text-align: left;
 }
 
-.profile-picture img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    object-fit: cover;
+.profile-section h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: none;
+    text-align: left;
 }
 
 #profile-pic-upload {

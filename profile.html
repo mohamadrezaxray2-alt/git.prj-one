@@ -20,19 +20,30 @@
     </header>
     <main class="profile-page">
         <div class="profile-container">
-            <h1>User Profile</h1>
-            <div class="profile-info">
+            <div class="profile-header">
                 <div class="profile-picture">
                     <img id="profile-img" src="assets/default-profile.svg" alt="Profile Picture">
-                    <input type="file" id="profile-pic-upload" accept="image/*">
-                    <label for="profile-pic-upload">Change Picture</label>
+                    <input type="file" id="profile-pic-upload" accept="image/*" style="display: none;">
+                    <label for="profile-pic-upload" class="change-pic-btn">Change Picture</label>
                 </div>
-                <div class="profile-details">
-                    <p><strong>Username:</strong> <span id="username-display"></span></p>
-                    <p><strong>Email:</strong> <span id="email-display"></span></p>
+                <div class="profile-summary">
+                    <h1 id="username-display"></h1>
+                    <p id="email-display"></p>
                 </div>
             </div>
-            <div class="change-password">
+
+            <div class="profile-section">
+                <h2>Edit Profile</h2>
+                <form id="edit-profile-form">
+                    <div class="form-group">
+                        <label for="username-edit">Username</label>
+                        <input type="text" id="username-edit">
+                    </div>
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="profile-section">
                 <h2>Change Password</h2>
                 <form id="change-password-form">
                     <div class="form-group">
