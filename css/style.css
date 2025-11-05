@@ -72,6 +72,14 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+#porsche-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
 /* Carousel Styles */
 .banner-carousel, .new-products {
     position: relative;
@@ -592,4 +600,18 @@ body.light-mode .profile-container {
     margin-top: 0.5rem;
     cursor: pointer;
     color: var(--primary-color);
+}
+
+.offer-text {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--primary-color);
 }
