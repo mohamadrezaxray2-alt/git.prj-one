@@ -87,16 +87,24 @@ document.addEventListener('DOMContentLoaded', () => {
             productItem.className = 'product-item';
             const carBrandLogo = product.carBrand.toLowerCase().replace(' ', '-');
             productItem.innerHTML = `
-                <img src="${product.images.cover}" alt="${product.name}" class="product-image">
-                <div class="product-info">
-                    <div>
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-code">${product.code}</p>
+                <div class="inner-container">
+                    <div class="border-outer">
+                        <div class="main-card">
+                            <img src="${product.images.cover}" alt="${product.name}" class="product-image">
+                            <div class="product-info">
+                                <div>
+                                    <h3 class="product-name">${product.name}</h3>
+                                    <p class="product-code">${product.code}</p>
+                                </div>
+                                <div class="product-brand">
+                                    <img src="images/car-logos/${carBrandLogo}.svg" alt="${product.carBrand}" class="brand-icon" onerror="this.style.display='none'">
+                                    <span>${product.carBrand}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="product-brand">
-                        <img src="assets/car-logos/${carBrandLogo}.svg" alt="${product.carBrand}" class="brand-icon" onerror="this.style.display='none'">
-                        <span>${product.carBrand}</span>
-                    </div>
+                    <div class="glow-layer-1"></div>
+                    <div class="glow-layer-2"></div>
                 </div>
             `;
             productItem.addEventListener('click', () => {
@@ -221,10 +229,18 @@ function setupNewProductsCarousel() {
         productItem.className = 'product-item';
         const carBrandLogo = product.carBrand.toLowerCase().replace(' ', '-');
         productItem.innerHTML = `
-            <img src="${product.images.cover}" alt="${product.name}" class="product-image" style="width: 100%; height: 200px;">
-             <div>
-                <h3 class="product-name">${product.name}</h3>
-                <p class="product-code">${product.code}</p>
+            <div class="inner-container">
+                <div class="border-outer">
+                    <div class="main-card">
+                        <img src="${product.images.cover}" alt="${product.name}" class="product-image" style="width: 100%; height: 200px;">
+                         <div>
+                            <h3 class="product-name">${product.name}</h3>
+                            <p class="product-code">${product.code}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glow-layer-1"></div>
+                <div class="glow-layer-2"></div>
             </div>
         `;
         productItem.addEventListener('click', () => {

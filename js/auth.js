@@ -30,7 +30,7 @@ function setupLoginPage() {
 
         if (user && user.email === email && user.password === password) {
             localStorage.setItem('currentUser', JSON.stringify(user));
-            window.location.href = 'profile.html';
+            window.location.href = 'index.html';
         } else {
             alert('Invalid credentials.');
         }
