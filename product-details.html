@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="productDetailsTitle">Product Details</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html" style="color: var(--primary-color); text-decoration: none;">Rims</a></div>
+            <div class="logo">Rims</div>
             <ul>
-                <li><a href="index.html" data-translate="navHome">Home</a></li>
-                <li><a href="index.html#new-products" data-translate="navNewProducts">New Products</a></li>
+                <li><a href="#" data-translate="navHome">Home</a></li>
+                <li><a href="#" data-translate="navNewProducts">New Products</a></li>
                 <li><a href="#" data-translate="navAboutUs">About Us</a></li>
                 <li><a href="#" data-translate="navContactUs">Contact Us</a></li>
             </ul>
@@ -20,9 +23,6 @@
                 <div class="language-switcher">
                     <button>EN</button>
                     <button>FA</button>
-                </div>
-                <div class="theme-switcher">
-                    <button>Dark/Light</button>
                 </div>
                 <a href="#" class="profile-icon" data-translate="navProfile">Profile</a>
             </div>
@@ -34,12 +34,49 @@
     </main>
 
     <div class="floating-share-buttons">
-        <button id="whatsapp-share"><img src="assets/whatsapp.svg" alt="WhatsApp"></button>
-        <button id="telegram-share"><img src="assets/telegram.svg" alt="Telegram"></button>
+        <button id="whatsapp-share"><img src="images/whatsapp.svg" alt="WhatsApp"></button>
+        <button id="telegram-share"><img src="images/telegram.svg" alt="Telegram"></button>
     </div>
 
     <footer>
-        <p data-translate="footerText">&copy; 2025 Rims Website. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="logo">Rims</div>
+                <p>Your trusted partner for all tire and battery services in Dubai. Available 24/7 for emergency assistance.</p>
+                <p>Rated 5/5 by our customers</p>
+            </div>
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Tire Repair & Puncture</li>
+                    <li>24/7 Mobile Service</li>
+                    <li>Wheel Alignment</li>
+                    <li>Battery Service</li>
+                    <li>Brake Pads</li>
+                    <li>View All Services</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>+971 50 442 2950</li>
+                    <li>WhatsApp</li>
+                    <li>Dubai, UAE</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Business Hours</h3>
+                <ul>
+                    <li>24/7 Service Available</li>
+                    <li>All Days of the Week Including Holidays</li>
+                    <li>Emergency Service</li>
+                    <li>Response Time: 15 Minutes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rims Website. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="js/translations.js"></script>

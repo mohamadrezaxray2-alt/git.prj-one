@@ -5,67 +5,26 @@
     --background-color: #000000; /* Black */
 }
 
-/* Light Mode Styles */
-body.light-mode {
-    --primary-color: #e6c300; /* Darker Yellow for better contrast */
-    --secondary-color: #ffffff; /* White */
-    --text-color: #000000; /* Black */
-    --background-color: #f0f0f0; /* Light Gray */
-}
-
-body.light-mode header,
-body.light-mode footer {
-    background-color: var(--secondary-color);
-    border-color: var(--primary-color);
-}
-
-body.light-mode nav .logo {
-    color: var(--primary-color);
-}
-
-body.light-mode nav ul li a {
-    color: var(--text-color);
-}
-
-body.light-mode nav ul li a:hover {
-    color: var(--primary-color);
-}
-
-body.light-mode .user-options button,
-body.light-mode .user-options a {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-}
-
-body.light-mode .user-options button:hover,
-body.light-mode .user-options a:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-body.light-mode .banner {
-    background-color: var(--secondary-color);
-}
-
-body.light-mode #search-bar {
-    background-color: #fff;
-    color: #000;
-}
-
-body.light-mode .product-item {
-    background-color: #fff;
-}
-
-body.light-mode .selection-area {
-    background-color: #fff;
-}
 
 html {
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 10px;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Share Tech", sans-serif;
     margin: 0;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -304,10 +263,50 @@ h2 {
 
 footer {
     background-color: var(--secondary-color);
-    text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     border-top: 2px solid var(--primary-color);
     margin-top: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
 }
 
 /* Product List Styles */
@@ -336,6 +335,53 @@ footer {
 .product-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.product-item {
+    position: relative;
+    border-radius: 24px;
+    background: linear-gradient(-30deg, #ffd700, transparent, #ffd700), linear-gradient(to bottom, #000, #000);
+}
+
+.product-item .border-outer {
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 24px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+}
+
+.product-item .main-card {
+    border-radius: 24px;
+    border: 2px solid #ffd700;
+    margin-top: -4px;
+    margin-left: -4px;
+    filter: url(#turbulent-displace);
+}
+
+.product-item .glow-layer-1 {
+    border: 2px solid rgba(255, 215, 0, 0.6);
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(1px);
+}
+
+.product-item .glow-layer-2 {
+    border: 2px solid #ffd700;
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(4px);
 }
 
 .product-image {
@@ -527,10 +573,6 @@ footer {
     text-align: center;
 }
 
-body.light-mode .auth-container,
-body.light-mode .profile-container {
-    background-color: #fff;
-}
 
 .auth-container h1, .profile-container h1 {
     color: var(--primary-color);
@@ -554,6 +596,11 @@ body.light-mode .profile-container {
     border: 1px solid var(--primary-color);
     color: var(--text-color);
     border-radius: 4px;
+}
+
+.form-group-center {
+    display: flex;
+    justify-content: center;
 }
 
 .auth-container button, .profile-container button {
