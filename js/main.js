@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let currentLanguage = localStorage.getItem('language') || 'en';
-    let currentTheme = localStorage.getItem('theme') || 'dark';
+    const user = localStorage.getItem('currentUser');
+    const currentPage = window.location.pathname.split('/').pop();
 
+    if (!user && currentPage !== 'login.html' && currentPage !== 'register.html') {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    let currentLanguage = localStorage.getItem('language') || 'en';
     const languageButtons = document.querySelectorAll('.language-switcher button');
-    const themeButton = document.querySelector('.theme-switcher button');
 
     // ==================================================================
     // Language Switching Logic
@@ -20,19 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ==================================================================
-    // Theme Switching Logic
-    // ==================================================================
-    const setTheme = (theme) => {
-        currentTheme = theme;
-        localStorage.setItem('theme', theme);
-        document.body.className = currentTheme === 'light' ? 'light-mode' : '';
-    };
-
-    themeButton.addEventListener('click', () => {
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
 
     // ==================================================================
     // UI Update Function
@@ -63,6 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Initial Setup
-    setTheme(currentTheme);
     setLanguage(currentLanguage); // This also calls updateUI
 });

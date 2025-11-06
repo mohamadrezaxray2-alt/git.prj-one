@@ -5,14 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html" style="color: var(--primary-color); text-decoration: none;">Rims</a></div>
+            <div class="logo">Rims</div>
             <ul>
-                <li><a href="index.html" data-translate="navHome">Home</a></li>
+                <li><a href="#" data-translate="navHome">Home</a></li>
+                <li><a href="#" data-translate="navNewProducts">New Products</a></li>
+                <li><a href="#" data-translate="navAboutUs">About Us</a></li>
+                <li><a href="#" data-translate="navContactUs">Contact Us</a></li>
             </ul>
+            <div class="user-options">
+                <div class="language-switcher">
+                    <button>EN</button>
+                    <button>FA</button>
+                </div>
+                <a href="#" class="profile-icon" data-translate="navProfile">Profile</a>
+            </div>
         </nav>
     </header>
     <main class="auth-page">
@@ -31,7 +44,9 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" required>
                 </div>
-                <button type="submit">Register</button>
+                <div class="form-group-center">
+                    <button type="submit">Continue</button>
+                </div>
             </form>
             <p>Already have an account? <a href="login.html">Login here</a>.</p>
         </div>
